@@ -12,7 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.pdm.grupo2.albumfigurinhas.ui.screens.WaitScreen
 import com.pdm.grupo2.albumfigurinhas.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,8 +45,22 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun AppMainContent() {
-    androidx.compose.material3.Text(
-        text = "Área do Android Compacto Pronta!",
-        color = Color.Black
-    )
+    WaitScreen(onLoadingComplete = {
+        println("A Carga de 1s acabou! Navegar para a CompetitionScreen...")
+    })
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MainActivityPreview() {
+    MyApplicationTheme {
+        Box(
+            modifier = Modifier
+                .size(width = 412.dp, height = 917.dp)
+                .background(Color.White),
+            contentAlignment = Alignment.Center
+        ) {
+            AppMainContent()
+        }
+    }
 }
