@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.pdm.grupo2.albumfigurinhas.ui.screens.WaitScreen
+import com.pdm.grupo2.albumfigurinhas.ui.screens.CompetitionScreen
 import com.pdm.grupo2.albumfigurinhas.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -45,8 +45,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun AppMainContent() {
-    WaitScreen(onLoadingComplete = {
-        println("A Carga de 1s acabou! Navegar para a CompetitionScreen...")
+    CompetitionScreen(onTeamSelect = { countryId ->
+        println("Seleção selecionada: $countryId")
     })
 }
 
