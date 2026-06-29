@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.grupo2.albumfigurinhas"
+    namespace = "com.pdm.grupo2.albumfigurinhas"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -14,6 +14,7 @@ android {
     defaultConfig {
         applicationId = "com.grupo2.myapplication"
         minSdk = 24
+        //noinspection OldTargetApi
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
